@@ -2,13 +2,16 @@ Exchange UM Auto Attendant to Cloud Auto Attendant Migration Scripts
 
 The Exchange UM AA to Cloud AA migration scripts have been created to assist Microsoft O365 tenant admins in migrating their Exchange UM Auto Attendant to the new Skype For Business Online/Teams Auto Attendant platform.
 
+
 Getting started
 •	Review the documentation to understand the concepts behind planning your Cloud Auto Attendants and requirements.
 •	Create a basic Cloud Auto Attendant through SFBO PowerShell examples.
 
+
 Important Details
 
 Export Process
+
 ExportUMAAs.ps1 will connect you to Exchange Online and get all of your configured Exchange Online UM Auto Attendants and export them into a JSON format in your $Home directory with a filename of: UMAAs.json. It also takes any Menu option that has a configured extension and gets the user’s SIP URI. 
 It will also download all of your audio prompts and create directories for these in this format:
 .\AAPrompts\(AA name)\(File Prompt)\
@@ -16,6 +19,7 @@ The script will ask the user if they want to have their audio files converted in
 Note: If you would like to connect to your onprem Exchange Server and download all of your onPrem Auto Attendants, use your onPrem Exchange management shell to run this script and select “No” when the prompt asks you if you would like to connect to Exchange online.
 
 Import Process
+
 ImportCloudAAs.PS1 will import your JSON file and allow you to select the Auto Attendants you would like to have imported to Cloud Auto Attendant. 
 It will then ask if you converted your audio files in the Export process and would like those files to be uploaded to your new Cloud Auto Attendants.
 You will then be prompted if you would like the script to build out your menus. The only menu options (as of now) that will be configured will be extensions you had configured in your Exchange UM Auto Attendants.
@@ -26,6 +30,7 @@ Once the script finishes, follow the Post setup instructions to create your onpr
 After this is done you can log into the Teams admin portal and review your new Auto Attendants and their settings.
 Note: the ImportCloudAAs.ps1 script needs to load the Schedules.psm1 module in order to run. Make sure this is in the directory you are running the script from.
 
+
 Instructions
 1.	Download all files into a working directory. 
 2.	Unzip ffmeg.zip in the same directory. Make sure that ffmpeg.exe is in your working directory.
@@ -35,6 +40,7 @@ Instructions
 6.	Run .\ImportCloudAAs.ps1
 7.	Follow onscreen instructions until the script completes.
 8.	Follow the Post setup Instructions below.
+
 
 Post setup Instructions
 Now that the basic framework of your Auto Attendants has been created its time to review the settings and begin testing your Cloud Auto Attendants. Go to the Teams admin portal to review your auto attendants and their settings.
@@ -75,7 +81,9 @@ You may need to remove the Line URI for the Exchange UM auto attendant.
 
 Remember if you have Nested Auto Attendants and you don't need to use one of your onPrem numbers you can create a OnlineApplicationInstance instead of an onPremise Disabled user object (HybridApplicationEndpoint). You will still need to create the OnlineApplicationInstanceAssociation for this. However, it is not necessary to license this account if no phone number is assigned.
 
+
 Additional Notes
+
 The following settings will not be moved over:
 InfoAnnouncementEnabled
 InfoAnnouncementFilename
