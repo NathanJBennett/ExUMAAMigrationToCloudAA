@@ -5,6 +5,7 @@ The Exchange UM AA to Cloud AA migration scripts have been created to assist Mic
 
 <h2>Getting started</h2>
 •	Review the documentation to understand the concepts behind planning your Cloud Auto Attendants and requirements. (https://docs.microsoft.com/en-us/skypeforbusiness/hybrid/plan-cloud-auto-attendant)
+
 •	Create a basic Cloud Auto Attendant through SFBO PowerShell examples.
 (https://docs.microsoft.com/en-us/powershell/module/skype/new-csautoattendant?view=skype-ps)
 
