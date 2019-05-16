@@ -89,26 +89,26 @@ Remember if you have Nested Auto Attendants and you don't need to use one of you
 <h2>Additional Notes</h2>
 
 The following settings will not be moved over:
-InfoAnnouncementEnabled
-InfoAnnouncementFilename
+InfoAnnouncementEnabled,
+InfoAnnouncementFilename,
 -Info announcement is not an option in Cloud Auto Attendant, we will still pull down this prompt for you.
-AllowDialPlanSubscribers
-AllowExtensions
-AllowedInCountryOrRegionGroups
-AllowedInternationalGroups
+AllowDialPlanSubscribers,
+AllowExtensions,
+AllowedInCountryOrRegionGroups,
+AllowedInternationalGroups,
 -Cloud Auto Attendant does not have extensions and will only call out to phone numbers you set in the Menu Options
-ContactScope
-ContactAddressList
+ContactScope,
+ContactAddressList,
 Cloud Auto Attendant has a similar option to this call Dial Scope. You can include or Exclude users in the organization’s directory when DialByName is configured in Cloud Auto Attendant. You can find more information about this here: https://docs.microsoft.com/en-us/powershell/module/skype/new-csautoattendantdialscope?view=skype-ps
 You can pull all the user’s sip address in a dialplan by connecting to Exchange Online and running:
 Get-UMMailbox | ?{$_.umdialplan -eq "(DialPlanName)"} | select SIPResourceIdentifier 
 
-SendVoiceMsgEnabled – Not allowed in Cloud Auto Attendant
-DTMFFallbackAutoAttendant – Only options that can be used are DTMF or Enable voice inputs
-MatchedNameSelectionMethod – Not configurable, Cloud Auto Attendant allows you to say the First Name or Last Name of user
-BusinessLocation – Not configurable
-ForwardCallsToDefaultMailbox – Not configurable
-DefaultMailbox – Not configurable
-WeekStartDay – Not configurable
-StarOutToDialPlanEnabled – Not configurable
+SendVoiceMsgEnabled – Not allowed in Cloud Auto Attendant,
+DTMFFallbackAutoAttendant – Only options that can be used are DTMF or Enable voice inputs,
+MatchedNameSelectionMethod – Not configurable, Cloud Auto Attendant allows you to say the First Name or Last Name of user,
+BusinessLocation – Not configurable,
+ForwardCallsToDefaultMailbox – Not configurable,
+DefaultMailbox – Not configurable,
+WeekStartDay – Not configurable,
+StarOutToDialPlanEnabled – Not configurable,
 Business Name - Not Configurable
