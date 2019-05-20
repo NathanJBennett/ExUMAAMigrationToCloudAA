@@ -18,7 +18,7 @@ The Exchange UM AA to Cloud AA migration scripts have been created to assist Mic
 ExportUMAAs.ps1 will connect you to Exchange Online and get all of your configured Exchange Online UM Auto Attendants and export them into a JSON format in your $Home directory with a filename of: UMAAs.json. It also takes any Menu option that has a configured extension and gets the user’s SIP URI. 
 It will also download all of your audio prompts and create directories for these in this format:
 .\AAPrompts\(AA name)\(File Prompt)\
-The script will ask the user if they want to have their audio files converted in order to be uploaded to Cloud Auto Attendant. This is necessary as Exchange UM imported prompts are in a MPEG 2 format and the requirements to upload an audio prompt to SFBO is outlined here: (https://docs.microsoft.com/en-us/powershell/module/skype/import-csonlineaudiofile?view=skype-ps). The script uses ffmpeg.exe to convert your audio files. This executable must be in the directory you are running the script from.
+The script will ask the user if they want to have their audio files converted in order to be uploaded to Cloud Auto Attendant. This is necessary as Exchange UM imported prompts are in a MPEG 2 format and the requirements to upload an audio prompt to SFBO is outlined here: (https://docs.microsoft.com/en-us/powershell/module/skype/import-csonlineaudiofile?view=skype-ps). The script uses ffmpeg.exe to convert your audio files. This executable must be in the directory you are running the script from. You may download FFMpeg from: https://ffmpeg.org/download.html
 Note: If you would like to connect to your onprem Exchange Server and download all of your onPrem Auto Attendants, use your onPrem Exchange management shell to run this script and select “No” when the prompt asks you if you would like to connect to Exchange online.
 
 **Import Process**
@@ -37,7 +37,7 @@ Note: the ImportCloudAAs.ps1 script needs to load the Schedules.psm1 module in o
 <h2>Instructions</h2>
 
 1.	Download all files into a working directory. 
-2.	Unzip ffmeg.zip in the same directory. Make sure that ffmpeg.exe is in your working directory.
+2.	Unzip ffmeg.zip in the same directory or download ffmpeg from: https://ffmpeg.org/download.html Make sure that ffmpeg.exe is in your working directory.
 3.	Open Powershell and navigate to your working directory
 4.	Run .\ExportEXUMAA.ps1
 5.	Follow onscreen instructions until the script completes.
